@@ -23,7 +23,7 @@ const Auth = () => {
         apiCall('https://9uj0ihoex6.execute-api.eu-west-1.amazonaws.com/dev/auth', 'post', {code: response.code})
         .then((res)=>{ 
             const token = res.data.access_token;
-            apiGitHub('https://api.github.com/user', 'get', token, {}).then((res)=>{
+            apiGitHub('https://api.github.com/user', 'get', token).then((res)=>{
                 let user = res;
                 user.token = token;
                 dispatch(saveUser(user));

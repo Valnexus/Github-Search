@@ -15,8 +15,7 @@ const Header = () => {
     const [searchCSS, setSearchCSS] = useState(false);
 
     useEffect(() => {
-        if(location.pathname === "/search") { setSearchCSS(true) }
-        if(location.pathname === "/search/results") { console.log('Search Results Page') }
+        location.pathname === "/search" ? setSearchCSS(true) : setSearchCSS(false) 
     }, [location.pathname]);
 
     const logOutHandler = () => {

@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import Auth from "../pages/index";
+import Auth from "../pages/index/index";
 import { useSelector } from 'react-redux';
 import { isAuth } from '../store/slices/authSlice';
 import Layout from "../components/layout";
 import Search from "../pages/search";
+import SearchResult from "../pages/searchResults";
 
 const AppRoutes = () => {
     const isLoggedIn = useSelector(isAuth);
@@ -16,12 +17,14 @@ const AppRoutes = () => {
                     <Layout>
                         <Search />
                     </Layout>
-                : <h1>You have to loggin to see this page.</h1>
+                : <h1 style={{ padding: "1rem", textAlign: 'center' }}>You have to loggin to see this page.</h1>
             } />
-            <Route path="/search/result" element={
+            <Route path="/search/results" element={
                 isLoggedIn ? 
-                    <Layout><h1>Search Result Page</h1></Layout> 
-                : <h1>You have to loggin to see this page.</h1>
+                    <Layout>
+                        <SearchResult />
+                    </Layout> 
+                : <h1 style={{ padding: "1rem", textAlign: 'center' }}>You have to loggin to see this page.</h1>
             } />
             <Route path="*" element={
                 <main style={{ padding: "1rem", textAlign: 'center' }}>

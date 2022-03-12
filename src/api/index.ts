@@ -10,10 +10,11 @@ export async function apiCall(url: string, method: any, query: {}) {
         .catch((error) => console.error(error));
 }
 
-export async function apiGitHub(url:string, method: any, token: string, query:{}) {
+export async function apiGitHub(url:string, method: any, token: string, query?: {}) {
     return await axios({
             url: url,
             method: method,
+            params: query,
             headers: {
                 'Authorization': 'bearer ' + token,
             }
