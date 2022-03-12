@@ -21,21 +21,6 @@
 .header-logo {
     width: 170px;
 }
-.header-search {
-    padding-top: 2px;
-}
-.header-search input {
-    width: 100%;
-    border-radius: 30px;
-    border: 1px solid #ccc;
-    padding: 8px 20px;
-    font-size: 15px;
-    line-height: 1.5em;
-    background-image: url('/public/images/icons/search-icon.webp');
-    background-size: 30px;
-    background-repeat: no-repeat;
-    background-position: 97% center;
-}
 .col-3 {
     flex: 1;
     width: 33.3333%;

@@ -7,8 +7,6 @@ import "./style.css";
 const SearchResult = () => {
     const repResult = useSelector(searchRepResult);
     const userResult = useSelector(searchUserResult);
-    console.log(repResult)
-    console.log(userResult)
     const [category, setCategory] = useState<Number>(1);
 
     return (

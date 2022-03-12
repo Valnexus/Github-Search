@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import UserBox from '../UserBox';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
+import SearchBar from '../SearchBar';
 
 const Header = () => {
     const userData = useSelector(user);
@@ -15,7 +16,7 @@ const Header = () => {
     const [searchCSS, setSearchCSS] = useState(false);
 
     useEffect(() => {
-        location.pathname === "/search" ? setSearchCSS(true) : setSearchCSS(false) 
+        location.pathname === "/search" || location.pathname === "/search/" ? setSearchCSS(true) : setSearchCSS(false) 
     }, [location.pathname]);
 
     const logOutHandler = () => {
@@ -34,9 +35,7 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="col-3">
-                    <div className="header-search">
-                        <input type="search" placeholder='Search' />
-                    </div>
+                    <SearchBar />
                 </div>
                 <div className="col-3 align-right">
                     <UserBox user={userData} logOut={()=>logOutHandler()} />                    
