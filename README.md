@@ -2,21 +2,8 @@
 
 This project uses React / Redux / TypeScript / React Router.
 
-## Available Scripts
+## How to Start
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-## How to use it
-
-1) Log In with Github
-2) Use search to find repositories or users
+1) In root folder, write npm install in the terminal to install all dependencies
+2) After installation is over use npm start to start the dev server on [http://localhost:3000](http://localhost:3000)
+3) Log In with Github and search for repositories or users
