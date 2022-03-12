@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { apiGitHub } from "../../api";
 import { user } from '../../store/slices/authSlice';
-import { saveSearch } from "../../store/slices/searchSlice";
+import { saveRepSearch, saveUserSearch } from "../../store/slices/searchSlice";
 import "./style.css";
 
 const Search = () => {
@@ -22,9 +22,18 @@ const Search = () => {
             per_page: 10
         }).then((res) => {
             setSearching(false);
-            dispatch(saveSearch(res));
-            navigate('/search/results');
-            console.log(res);
+            dispatch(saveRepSearch(res));
+            apiGitHub('https://api.github.com/search/users', 'get', token, {
+                q: search,
+                per_page: 10
+            }).then((resUser)=> {
+                setSearching(false);
+                dispatch(saveUserSearch(resUser));
+                navigate('/search/results');
+            }).catch((err) => {
+                console.log(err);
+                setSearching(false);
+            });
         }).catch((err) => {
             console.log(err);
             setSearching(false);

@@ -41,4 +41,44 @@
 .result-page .result-content h2 {
     font-size: 20px;
     font-weight: bold;
+    margin: 0 auto 20px;
+}
+.result-page .result-box {
+    background: #fff;
+    margin: 0 auto 20px;
+    padding: 30px 25px 10px;
+}
+.result-page .result-box h3 {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0 auto 10px;
+    color: #484848;
+}
+.result-page .result-box h3 span {
+    color: #777;
+    padding-left: 10px;
+    font-weight: normal;
+}
+.result-page .result-box p {
+    font-size: 14px;
+    color: #777;
+    margin: 0 auto 20px;
+    line-height: 1.5em;
+}
+.result-page .result-box .result-box-info {
+    color: #777;
+    font-size: 12px;
+    margin: 0 0 20px;
+}
+.result-page .result-box .result-box-info li {
+    list-style: none;
+    display: inline-block;
+    border-right: 2px solid #ccc;
+    padding-right: 5px;
+    margin-right: 5px;
+}
+.result-page .result-box .result-box-info li:last-child {
+    border: 0;
+    padding: 0;
+    margin: 0;
 }

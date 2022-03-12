@@ -2,25 +2,31 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '..';
 
 interface SearchState {
-  searchResult: { [key: string]: string };
+  searchRepResult: { [key: string]: any };
+  searchUserResult: { [key: string]: any };
 }
 
 const initialState: SearchState = {
-  searchResult: {},
+  searchRepResult: {},
+  searchUserResult: {},
 }
 
 export const searchSlice = createSlice({
   name: 'search',
   initialState,
   reducers: {
-    saveSearch: (state, action: PayloadAction<{}>) => {
-      state.searchResult = action.payload
+    saveRepSearch: (state, action: PayloadAction<{}>) => {
+      state.searchRepResult = action.payload
+    },
+    saveUserSearch: (state, action: PayloadAction<{}>) => {
+      state.searchUserResult = action.payload
     },
   },
 });
 
-export const { saveSearch } = searchSlice.actions;
+export const { saveRepSearch, saveUserSearch } = searchSlice.actions;
 
-export const searchResult = (state: RootState) => state.search.searchResult;
+export const searchRepResult = (state: RootState) => state.search.searchRepResult;
+export const searchUserResult = (state: RootState) => state.search.searchUserResult;
 
 export default searchSlice.reducer;
