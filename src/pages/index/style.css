@@ -1,0 +1,24 @@
+.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.auth-page__button {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    background: #5c5c5c;
+    color: #fff;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 110%;
+    line-height: 1.5em;
+    cursor: pointer;
+}
+.auth-page__button:hover {
+    opacity: 0.8;
+}
