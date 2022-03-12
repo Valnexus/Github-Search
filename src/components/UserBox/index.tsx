@@ -1,6 +1,7 @@
 import './style.css';
 
-const UserBox = ({ user, logOut }) => {
+const UserBox = (props: { user: any; logOut: any; }) => {
+    const { user, logOut } = props;
     return (
         <div className="header-user">
             <img src={user.avatar_url} alt={user.name} />
