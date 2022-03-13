@@ -1,0 +1,71 @@
+.pagination {
+    text-align: right;
+}
+.pagination .pagination-list {
+    margin: 0;
+    padding: 0;
+}
+.pagination .pagination-list .pagination-item {
+    display: inline-block;
+    list-style: none;
+    color: #686868;
+    margin: 0 3px;
+    vertical-align: top;
+}
+.pagination .pagination-list .pagination-item span {
+    display: block;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 5px;
+    line-height: 1.5em;
+    padding: 5px 11px;
+    border-radius: 8px;
+    height: 32px;
+    min-width: 32px;
+    position: relative;
+}
+.pagination .pagination-list .pagination-item span.inactive {
+    cursor: initial;
+}
+.pagination .pagination-list .pagination-item:first-child span,
+.pagination .pagination-list .pagination-item:last-child span {
+    background: #eee;
+    -webkit-transition: ease-in-out 0.2s;
+    -moz-transition: ease-in-out 0.2s;
+    -o-transition: ease-in-out 0.2s;
+    -webkit-transition: ease-in-out 0.2s;
+    transition: ease-in-out 0.2s;
+}
+.pagination .pagination-list .pagination-item:first-child:hover span,
+.pagination .pagination-list .pagination-item:last-child:hover span {
+    background: #ccc;
+}
+.pagination .pagination-list .pagination-item:hover span.inactive {
+    background: #eee;
+}
+.pagination .pagination-list .pagination-item span.active {
+    color: #181818;
+    font-weight: bold;
+}
+.pagination .pagination-list .pagination-item:first-child span:before {
+    border: solid #282828;
+    content: '';
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    position: absolute;
+    margin: 7px 0 0 -8px;
+}
+.pagination .pagination-list .pagination-item:last-child span:before {
+    border: solid #282828;
+    content: '';
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    position: absolute;
+    margin: 7px 0 0 -11px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}

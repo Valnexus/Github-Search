@@ -1,6 +1,6 @@
 import "./style.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { apiGitHub } from "../../api";
@@ -12,6 +12,7 @@ const SearchBar = (props: {box?:boolean}) => {
     const { box } = props;
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const { pathname } = useLocation();
     const { token } = useSelector(user);
     const [search, setSearch] = useState('');
     const [searching, setSearching] = useState(false);
@@ -21,18 +22,20 @@ const SearchBar = (props: {box?:boolean}) => {
         setSearching(true);
         apiGitHub('https://api.github.com/search/repositories', 'get', token, {
             q: search,
-            per_page: 10
+            per_page: 100
         }).then((res) => {
             setSearching(false);
             dispatch(saveRepSearch(res));
             apiGitHub('https://api.github.com/search/users', 'get', token, {
                 q: search,
-                per_page: 10
+                per_page: 100
             }).then((resUser)=> {
                 setSearching(false);
                 dispatch(saveUserSearch(resUser));
                 setSearch('');
-                navigate('/search/results');
+                if(pathname === "/search/" || pathname === "/search") {
+                    navigate('/search/results');
+                }                
             }).catch((err) => {
                 console.log(err);
                 setSearching(false);
