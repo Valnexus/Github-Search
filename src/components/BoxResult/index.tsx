@@ -21,16 +21,19 @@ const RepositoryResult = (props: { data:any, user?:boolean }) => {
 
     return (
         <div>
-            <h2>{numberWithCommas(Number(data.total_count))} repository results</h2>
+            <h2>
+                <span data-test="resultNumber">{numberWithCommas(Number(data.total_count))}</span>
+                {user ? ' user' : ' repository'} results
+            </h2>
             {currnetItems.map((item:any) =>   
                 user ? 
                     <div className="result-box" key={item.id}>
-                        <h3>{item.login} <span>Lorem ipsum is simply dummy text.</span></h3>
+                        <h3><a href={item.html_url} target="_blank" rel="noreferrer">{item.login}</a> <span>Lorem ipsum is simply dummy text.</span></h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
                     </div>
                 :
                     <div className="result-box" key={item.id}>
-                        <h3>{item.full_name}</h3>
+                        <h3><a href={item.html_url} target="_blank" rel="noreferrer">{item.full_name}</a></h3>
                         <p>{item.description}</p>
                         <ul className="result-box-info">
                             <li>{numberWithSymbol(item.stargazers_count, 1)} Stars</li>

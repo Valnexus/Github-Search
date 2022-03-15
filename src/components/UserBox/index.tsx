@@ -1,7 +1,11 @@
 import './style.css';
 
-const UserBox = (props: { user: any; logOut: any; }) => {
-    const { user, logOut } = props;
+interface Props {
+    user: any;
+    logOut: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+const UserBox: React.FC<Props> = ({ user, logOut }) => {
     return (
         <div className="header-user">
             <img src={user.avatar_url} alt={user.name} />
